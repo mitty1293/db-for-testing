@@ -1,11 +1,11 @@
 version: '3.4'
 services:
-    db:
+    mysql_test:
         image: mysql:8.0.28
-        container_name: test_mysql
+        container_name: mysql_test
         environment: 
             - MYSQL_ROOT_PASSWORD=password
-            - MYSQL_DATABASE=test_mysql
+            - MYSQL_DATABASE=mysql_test
             - MYSQL_USER=user
             - MYSQL_PASSWORD=password
         ports:
