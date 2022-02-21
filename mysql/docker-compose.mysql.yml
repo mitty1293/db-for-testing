@@ -5,8 +5,10 @@ services:
         container_name: mysql_test
         environment: 
             - MYSQL_ROOT_PASSWORD=password
-            - MYSQL_DATABASE=mysql_test
+            - MYSQL_DATABASE=mysql_test_db
             - MYSQL_USER=user
             - MYSQL_PASSWORD=password
         ports:
             - "3306:3306"
+        volumes:
+            - ./initdb.d:/docker-entrypoint-initdb.d
