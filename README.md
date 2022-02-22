@@ -1,10 +1,10 @@
 # db-for-testing
 Database for testing
-## Deploy
-```
-$ docker-compose up -d
-```
 ## MySQL
+### Deploy
+```
+$ docker-compose -f mysql/docker-compose.mysql.yml up -d
+```
 ### Log in
 ```
 $ mysql --user=user --password=password
