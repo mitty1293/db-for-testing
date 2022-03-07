@@ -1,0 +1,8 @@
+FROM debian:bullseye-slim
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends sqlite3 \
+    && rm -rf /var/lib/apt/lists/*
+WORKDIR /sqlite3_data
+COPY ./sqlite/init.sql /sqlite3_data/
+RUN /usr/bin/sqlite3 test_sqlite.db < init.sql
+ENTRYPOINT [ "/usr/bin/sqlite3", "test_sqlite.db"]
